@@ -1,3 +1,4 @@
+import React from "react"
 
 //Opcion 2 con DESTRUCTURING
 //onCLose >> la traemos es una propiedad de Card en APP.js
