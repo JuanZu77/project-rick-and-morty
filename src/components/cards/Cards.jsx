@@ -1,5 +1,5 @@
 //Nos traemos la funcion cards
-import Card from './Card';
+import Card from '../card/Card';
 
 export default function Cards(props) {
    //Nos traemos el ARRAY characters que contiene 3 objetos (Personajes) 
