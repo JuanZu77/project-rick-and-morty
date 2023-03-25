@@ -9,10 +9,12 @@ const Contenedor = styled.div`
      border: 2px solid #9b35cf;
      border-radius: 5px;
      background-color: #f39cfb;
-     box-shadow: 0 2 25px rgba(0, 255, 255, 0.5);
+     box-shadow: 0px 1px 11px 4px rgba(39,46,179,0.54);
 
      &:hover{
       transform: scale(1.1);
+      transition: 0.5s;
+      box-shadow: 0px 1px 11px 4px white;
      }
 `; 
 
@@ -58,7 +60,7 @@ const Name = styled.h2`
      opacity: 0.5;
      border-radius: 5px;
 `;
-//Species y Gender
+//Contenedor de la props 
 const PropsContenedor  = styled.div`
         display: flex;
         justify-content: space-evenly;
@@ -66,6 +68,9 @@ const PropsContenedor  = styled.div`
         
 `;
 
+//Porps Species y Gender
+//Necesitamos poder aplicar margin y padding directamente 
+//   sobre estos elementos para poder acomodarlos 
 const Props = styled.h2`
      margin-top: 5px
 

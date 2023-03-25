@@ -1,0 +1,32 @@
+.containerSearch{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*Al Input aplciamos estilos direcatmente a la estiquea*/
+input {
+    outline: none; /*quita el borde al posicionarse en el input*/
+    background-color: #f39cfb; /*pink: #f39cfb*/
+    color: white;
+    border-radius: 5px 0 0 5px;
+    border-color: gainsboro;
+}
+
+input:hover{
+    border: 2px solid #0035e6;
+}
+
+.buttonSearch{
+    background-color: #0035e6;
+    opacity: 0.5;
+    color: white;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 0 5px 5px 0;
+}
+
+.buttonSearch:hover{
+    opacity: 1;
+}
+

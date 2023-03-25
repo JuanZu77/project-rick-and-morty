@@ -14,36 +14,34 @@ function App () {
   return (
   <div className='App' style={{ padding: '25px' }}>
 
-        <div>
-          <Card
-            id={Rick.id}
-            name={Rick.name}
-            species={Rick.species}
-            gender={Rick.gender}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-          />
-        </div>
-        <hr />
+         <div>
+            <SearchBar
+              onSearch={(characterID) => window.alert(characterID)}
+            />
+          </div>
 
+     <hr />
+          <div className='cardRick'>
+            <Card
+              id={Rick.id}
+              name={Rick.name}
+              species={Rick.species}
+              gender={Rick.gender}
+              image={Rick.image}
+              onClose={() => window.alert('Emulamos que se cierra la card')}
+            />
+          </div>
 
-        <div>
-          <Cards
-            characters={characters}
-          />
-        </div>
-        <hr />
-
-
-        <div>
-          <SearchBar
-            onSearch={(characterID) => window.alert(characterID)}
-          />
-        </div>
-
+      <hr />
+          <div>
+            <Cards
+              characters={characters}
+            />
+          </div>
 
   </div>
   )
 }
+//Cada <HR> linea gris que SEPARA cada <DIV> (Card - Cards - SearchBar) 
 
 export default App
