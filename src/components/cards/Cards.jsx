@@ -25,38 +25,44 @@ const Contenedor = styled.div`
 `;
 
 export default function Cards(props) {
-   //Nos traemos el ARRAY characters que contiene 3 objetos (Personajes) 
+
    const { characters } = props;
-   //console.log(props)
 
    //key={char.id} el id funcionar como llave de cada elemento hijo
    return (
 
    <Contenedor>
+            
+            {characters.map((char)=>(
+               <Card
+               key={char.id}
+               name={char.name}
+               species={char.species}
+               gender={char.gender}
+               image={char.image}
 
-         {characters.map((char)=>(
-            <Card
-            key={char.id}
-            name={char.name}
-            species={char.species}
-            gender={char.gender}
-            image={char.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-            />
-         ))}
+               onClose={() => props.onClose(char.id) /*window.alert('Emulamos que se cierra la card')*/}
+               />
+            ))}
 
    </Contenedor>
-   );
+
+   )
 }
 
 
 
 
 //Podriamos APLICAR DESTRUCTURING en el MAP
-//   {characters.map((id, name, species, gender, image)=>(
-//        key={id}
-//        name={name}
-//        species={species}
-//        gender={gender}
-//        image={image}
-//        onClose={() => window.alert('Emulamos que se cierra la card')}
+// {characters.map(({id, name, species, gender, image})=>(
+
+//    <Card 
+//         key={id}
+//         name={name}
+//         species={species}
+//         gender={gender}
+//         image={image}
+//         onClose={() => props.onClose(id)}
+//    />
+//   ))}
+

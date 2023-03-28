@@ -52,6 +52,7 @@ const Image = styled.img`
 `;
 
 const Name = styled.h2`
+     max-width: 210px;
      position: absolute;
      margin-bottom: 10px;
      margin-left: 10px;

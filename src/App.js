@@ -1,47 +1,75 @@
-//importamos App.css que contiene los estilos
+import { useState } from 'react'
 import './App.css'
 
-//importamos los componentes
-import Card from './components/card/Card.jsx'
 import Cards from './components/cards/Cards.jsx'
-import SearchBar from './components/search/SearchBar.jsx'
-
-//trae la info de nuestra "base de datos" data.js
-import characters, { Rick } from './data.js' 
-                                //characters por default y tambien exporta a {Rick}
+import Nav from './components/nav/Nav'
+//BD
+//import characters from './data.js'
 
 function App () {
+
+   const [characters, setCharacters] = useState([])
+
+   /*const example = {
+    name: 'Morty Smith',
+    species: 'Human',
+    gender: 'Male',
+    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    };*/
+
+   const onSearch = (id)=>{
+
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      //console.log(data);
+      //setCharacters([...characters, data])
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
+     } else {
+        window.alert('No hay personajes con ese ID');
+      }
+
+    });
+    
+ };
+
+ //onSearchOPCION 2 --> Solucion eliminar Cuandi hay cartas Repetidas
+// Si existe que no la traiga
+
+//Reemplazar desde   .then((data) => {
+
+// (data.name ? characters.filter((char)=> char.if===data.id).length ===0 : "") ?
+// setCharacters([...characters, data]) : alert ("Id No encontrado") 
+// });
+// .catch ((error)=> console.log(error)):
+// };
+
+
+//Pasar onClose() a Cards
+ const onClose = (id) => {
+  //Recorremos todos los id y filtramos todos los diferentes al id
+  //El que sea === al id se elimina
+      const filtrado = characters.filter((char)=>char.id !== Number(id))
+      setCharacters(filtrado)
+ };
+
+
+
   return (
+
   <div className='App' style={{ padding: '25px' }}>
 
-         <div>
-            <SearchBar
-              onSearch={(characterID) => window.alert(characterID)}
-            />
-          </div>
-
-     <hr />
-          <div className='cardRick'>
-            <Card
-              id={Rick.id}
-              name={Rick.name}
-              species={Rick.species}
-              gender={Rick.gender}
-              image={Rick.image}
-              onClose={() => window.alert('Emulamos que se cierra la card')}
-            />
-          </div>
-
+        <Nav onSearch={onSearch}/>
+      <hr />       
       <hr />
           <div>
             <Cards
-              characters={characters}
+              characters={characters} onClose={onClose}
             />
           </div>
-
   </div>
   )
 }
-//Cada <HR> linea gris que SEPARA cada <DIV> (Card - Cards - SearchBar) 
 
 export default App
