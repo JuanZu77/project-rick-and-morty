@@ -1,6 +1,4 @@
-//Solo a este compnenete Vamos a Aplicarle Estilos con CSS Module
-//En la caperta search --> creamos el archivo ->> search.module.css
-//La importamos con una variable donde se guardan los estilos
+//SEARCH --> INPUT + BOTON AGREGAR
 
 import { useState } from "react";
 import styles from "../search/Search.module.css";

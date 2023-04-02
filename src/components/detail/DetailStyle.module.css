@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    color: aliceblue;
+    font-size: 15px;
+    margin-left: 0px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.info{
+color: antiquewhite;
+text-align: start;
+
+}
+
+.button{
+    background-color: #0035e6;
+    opacity: 0.5;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.button:hover{
+    opacity: 1;
+}
+
+.image{
+     position: relative;
+     top: 50px;
+     width: 300px;
+     height:400px;
+     border: 2px solid #9b35cf;
+     border-radius: 5px;
+     background-color: #f39cfb;
+     box-shadow: 0px 1px 11px 4px rgba(39,46,179,0.54);
+     margin: 10px;
+     
+}

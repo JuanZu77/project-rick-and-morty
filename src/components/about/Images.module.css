@@ -1,0 +1,19 @@
+
+.imgGit{
+ 
+  background-image: url("../about/images/rick_and_morty.jpg");
+  image-rendering: optimizeQuality;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+  
+
+.imgLinkedIn{
+    background-image: url("../about/images/rick_and_morty_fuckyou.jpg");
+    image-rendering: optimizeQuality;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+}
+

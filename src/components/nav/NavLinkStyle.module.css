@@ -1,0 +1,14 @@
+
+.active{
+    color: blue;
+    text-decoration: none;
+    scale: 1.5;
+ 
+  
+}
+
+.disable{
+    color:blue;
+    text-decoration: none;
+    opacity: 0.7;
+}

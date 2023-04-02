@@ -1,5 +1,8 @@
+//ESTILOS y EVENTOS PARA CADA CARTA
+
 import React from "react";
 import styled from 'styled-components'
+import {Link} from 'react-router-dom';
 
 const Contenedor = styled.div`
      display: flex;
@@ -10,7 +13,8 @@ const Contenedor = styled.div`
      border-radius: 5px;
      background-color: #f39cfb;
      box-shadow: 0px 1px 11px 4px rgba(39,46,179,0.54);
-
+     margin: 10px;
+     
      &:hover{
       transform: scale(1.1);
       transition: 0.5s;
@@ -41,6 +45,7 @@ const Button = styled.button`
    }
 `;
 
+//Name: bajarlo
 const ImageContainer = styled.div`
        display: flex;
        flex-direction: column-reverse;
@@ -74,16 +79,21 @@ const PropsContenedor  = styled.div`
 //   sobre estos elementos para poder acomodarlos 
 const Props = styled.h2`
      margin-top: 5px
-
-
 `;
 
-//Opcion 2 con DESTRUCTURING
+
+const StyleLink = styled(Link)`
+   text-decoration: none;
+`;
 //onCLose >> la traemos es una propiedad de Card en APP.js
 //           ya está definida, por lo tanto aquí sólo la invocamos
-export default function Card({name, species, image, gender, onClose}) {
+
+//Clase 9 -->Envolver EL contenedor Card con LINK
+// debemos ir al Detalle del Personaje
+export default function Card({id,name, species, image, gender, onClose}) {
    return (
-      <Contenedor >
+      <StyleLink to={`/detail/${id}`}>
+       <Contenedor >
          <ButtonContainer>
             <Button onClick={onClose}>X</Button>
          </ButtonContainer>
@@ -99,7 +109,8 @@ export default function Card({name, species, image, gender, onClose}) {
          </PropsContenedor>
         
 
-      </Contenedor>
+       </Contenedor>
+      </StyleLink>
    );
 };
 
