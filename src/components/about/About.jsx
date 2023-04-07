@@ -6,11 +6,6 @@ import styles from "../about/Images.module.css";
 
 const Container = styled.div`
        color: white; 
-
-   @media (min-width: 0px) and (max-width: 600px){
-             width: 300px;
-         }
-       
 `;
 
 const ContainerImg = styled.div`
@@ -26,11 +21,27 @@ const Titulo = styled.h1`
    color: white;
    opacity: 0.75;
    color: transparent; 
+
+   @media(max-width: 800px){
+    font-size: 35px;
+  }
+  
+  @media(max-width: 600px){
+    font-size: 25px;
+  }
 `;
 
 const Parrafo = styled.p`
     font-family: sans;
     font-size: 20px;
+
+    @media(max-width: 800px){
+      font-size: 15px;
+    }
+    
+    @media(max-width: 600px){
+      font-size: 10px;
+    }
 `;
 
 const Tarjetas = styled.div`
@@ -50,6 +61,19 @@ color: white;
 background-color: #0035e6;
 opacity: 0.5;
 border-radius: 5px;
+
+@media(max-width: 800px){
+  font-size: 16px;
+  max-width: 180px;
+  top: 400px;
+  left: 40px;
+}
+
+@media(max-width: 600px){
+  font-size: 12px;
+  top: 275px;
+  left: 20px;
+}
 `;
 
 const Image = styled.img`
@@ -67,6 +91,28 @@ const Image = styled.img`
     scale: 1.2;
 
   }
+  @media(max-width: 800px){
+    width: 200px;
+    height: 300px;
+
+    &:hover {
+      opacity: 1;
+      scale: 1.1;
+  
+    }
+  }
+
+  @media(max-width: 600px){
+    width: 150px;
+    height: 200px;
+
+    &:hover {
+      opacity: 1;
+      scale: 1.05;
+  
+    }
+  }
+
 `;
 
 const Saludo = styled.h2`
@@ -74,6 +120,16 @@ const Saludo = styled.h2`
    position:relative;
    top: 75px;
    justify-content: flex-end;
+
+   @media(max-width: 800px){
+    font-size: 15px;
+    top: 35px
+  }
+  
+  @media(max-width: 600px){
+    font-size: 12px;
+    top: 30px
+  }
    
 `;
 

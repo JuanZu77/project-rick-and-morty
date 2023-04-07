@@ -1,26 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, useLocation, useNavigate} from "react-router-dom";
 
 import Cards from './components/cards/Cards.jsx'
 import Nav from './components/nav/Nav'
-//BD
+
 //import characters from './data.js'
 import About from "./components/about/About";
 import Detail from './components/detail/Detail';
 
+import Form from './components/form/Form';
 
 function App () {
 
-    const [characters, setCharacters] = useState([])
+  const location = useLocation()
 
-      /*const example = {
-        name: 'Morty Smith',
-        species: 'Human',
-        gender: 'Male',
-        image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-        };*/
+    const [characters, setCharacters] = useState([])
 
       const onSearch = (id)=>{
 
@@ -45,15 +41,44 @@ function App () {
             setCharacters(filtrado)
       };
 
+//Paso 5 --> Clase 10
+ const navigate = useNavigate()
+ const [access, setAccess] = useState(false)
+const userName = 'ejemplo@gmail.com';
+const password = '1password';
 
+ const login = (userData) => {
+  console.log(userData)
+    if (userData.userName === userName && userData.password === password) {
+      console.log("prueba")
+      setAccess(true);
+      navigate('/home')
+  }
+};
+
+
+useEffect(()=>{ //Si por algún motivo el usuario pierde acceso vuelve a "/"
+     !access && navigate("/")
+},[access, navigate]);//use effect en el Array solicita por defecto el navigate.
+
+
+//logOut EXTRA
+const logOut =()=>{
+   access && setAccess(false)
+   navigate('/')
+}
 
   return (
 
-     <div className='App' style={{ padding: '25px' }}>
-
-       <Nav onSearch={onSearch}/>
+    <div className='App' style={{ padding: '25px' }}>
+      
+       {location.pathname !== "/" && 
+       <Nav onSearch={onSearch} logOut={logOut}/>}
+       
        
         <Routes>
+            <Route path='/' element={<Form login={login}/>}/>
+
              <Route path='/home' element={<Cards
               characters={characters} onClose={onClose} />}
               />

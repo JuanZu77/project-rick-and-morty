@@ -1,0 +1,89 @@
+*{ box-sizing: border-box;}
+
+.container{
+ /*FLEX FOX*/
+ display: flex;
+ justify-content: center; /*Contenido del BODY en el centro (eje horizontal)*/
+ align-items: center; /*AHORA todo centrado HORIZONTAL y VERTICALMENTE (eje vertical)*/
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    padding: 20px;
+
+  
+    width: 600px;
+    height: auto;
+
+    background-color: black;
+    opacity: 0.75;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+}
+
+.button{
+    background-color: #0035e6;
+    opacity: 0.5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 5px 5px 5px 5px;
+
+    width: 75px;
+    height: 30px;
+
+    margin-top: 15px;
+}
+
+.button:hover{
+    opacity: 1;
+}
+
+
+.label{
+    display: block;
+    margin: 5px;
+    font-weight:bold;
+    color: rgb(226, 234, 235);
+}
+
+.divLabelForm{
+    margin: 10px;
+}
+
+.img{
+    background-image: url("../form/img/rick-morty-login.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 150px;
+    width: 600px;
+    height: 400px;
+    opacity: 0.6;
+}
+
+.warning {
+    color:yellow;
+    font-size: small;
+    margin-bottom: 5px;
+}
+
+/*------------------------*/
+@media (max-width: 400px) {
+    .form .img, .divLabelForm .label{
+        width: 75%;
+    }
+
+    .img{
+        background-size:contain;
+    }
+
+}
+

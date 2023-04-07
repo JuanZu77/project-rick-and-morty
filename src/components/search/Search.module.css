@@ -30,3 +30,19 @@ input:hover{
     opacity: 1;
 }
 
+/*
+.logOut{
+    background-color: #db54c0;
+    opacity: 0.5;
+    color: white;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 5px 5px 5px 5px;
+    justify-content: right;
+    align-items:flex-end;
+}
+
+.logOut:hover{
+    opacity: 1;
+}*/
+
