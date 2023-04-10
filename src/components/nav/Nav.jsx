@@ -33,12 +33,17 @@ export default function Nav (props){
          <div className={styles.container}>
 
           <NavLinkMe to="/home">  Home </NavLinkMe>
+          <NavLinkMe to="/favorites"> Favorites </NavLinkMe>
           <NavLinkMe to="/about"> About </NavLinkMe>
           
-            <SearchBar
+
+            <SearchBar 
               onSearch={(characterID) => props.onSearch(characterID)/*window.alert(characterID)*/}
             /> 
-             <button onClick={()=>navigate("/")} className={styles.logOut}>LogOut</button>   
+
+             <button onClick={()=>navigate("/")} className={styles.logOut}>LogOut</button> 
+
+               
          </div>
     )
 }

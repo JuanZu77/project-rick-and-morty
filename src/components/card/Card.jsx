@@ -1,8 +1,12 @@
 //ESTILOS y EVENTOS PARA CADA CARTA
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components'
 import {Link} from 'react-router-dom';
+
+import {connect} from 'react-redux'
+import {addFavorites, deleteFavorites} from '../reducer/actions';
+
 
 const Contenedor = styled.div`
      display: flex;
@@ -25,8 +29,8 @@ const Contenedor = styled.div`
 const ButtonContainer = styled.button`
    
    display: flex;
-   justify-content: flex-end;
-   border-radius: 5px 5px 0 0;
+   justify-content: space-between;
+   border-radius: 5px 5px;
    border: none;
    background-color: white;
  
@@ -85,19 +89,71 @@ const Props = styled.h2`
 const StyleLink = styled(Link)`
    text-decoration: none;
 `;
+
+const ButtonFav = styled.button`
+   background-color: #b70cc3;
+   color: aqua;
+   border-radius: 5px; 
+
+   &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+   }
+`;
+
 //onCLose >> la traemos es una propiedad de Card en APP.js
 //           ya está definida, por lo tanto aquí sólo la invocamos
 
+
 //Clase 9 -->Envolver EL contenedor Card con LINK
 // debemos ir al Detalle del Personaje
-export default function Card({id,name, species, image, gender, onClose}) {
+
+function Card({id,name, species, image, gender, onClose, deleteFavorites, addFavorites, myFavorites}) {
+
+   const [isFav, setIsfav] = useState(false)
+
+   const handleFavorite = ()=>{
+      //Funcion Boton Favoritos
+      //Si el Personaje está en favoritos, lo quitamos
+      if(isFav){//===true
+      setIsfav(false)
+      deleteFavorites(id)
+
+      //si NO está en favoritos, lo agregamos
+      }else{
+         setIsfav(true)
+         addFavorites({id,name, species, image, gender, onClose})
+      }
+   };
+
+   //Este useEffect mapea y Actualiza los favoriotos mientras navegamos en la APP.
+   useEffect(() => {
+      myFavorites.forEach((fav) => {
+        if (fav.id === id) {
+        setIsfav(true);
+       }
+      });
+      }, [myFavorites]);
+
+
+
    return (
-      <StyleLink to={`/detail/${id}`}>
+
+      //Si<Stylelink envuelve todo el componente toma tambien el click de los Bootnes y genera que no funcionen
        <Contenedor >
          <ButtonContainer>
-            <Button onClick={onClose}>X</Button>
+            { isFav 
+            ? 
+            (<ButtonFav onClick={handleFavorite}>💙</ButtonFav>) 
+            : 
+            (<ButtonFav onClick={handleFavorite}>🤍</ButtonFav>)
+            }
+
+            {/*Si el Boton está en Favoritos le quitamos el boton X */}
+            {isFav? null : (<Button onClick={onClose}>X</Button>)}
          </ButtonContainer>
 
+         <StyleLink to={`/detail/${id}`}>
          <ImageContainer>
             <Image src={image} alt="Not Found" />
             <Name>{name}</Name>
@@ -108,11 +164,41 @@ export default function Card({id,name, species, image, gender, onClose}) {
          <Props>{gender}</Props>
          </PropsContenedor>
         
-
+         </StyleLink>
        </Contenedor>
-      </StyleLink>
+      
    );
 };
+
+// Mapa de Estados
+const mapStateToProps = (state) =>{
+   return{
+      myFavorites: state.myFavorites
+   }
+}
+
+//Despacha el Estado
+const mapDispatchToProps = (dispatch)=>{
+    return{
+      addFavorites: (character)=>{
+         dispatch(addFavorites(character))
+      },
+
+      deleteFavorites: (id) =>{
+         dispatch(deleteFavorites(id))
+      }
+    };
+};
+
+//AHORA debemos EXPORTAR un CONNECT
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
+
+
+
+
+
+
+
 
 /* Opcion 1 >> SIN DESTRUCTURING
 

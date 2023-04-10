@@ -30,6 +30,12 @@ input:hover{
     opacity: 1;
 }
 
+
+@media (max-width:400px){
+    input{
+        width: 150px;
+    }
+}
 /*
 .logOut{
     background-color: #db54c0;

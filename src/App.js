@@ -12,6 +12,9 @@ import Detail from './components/detail/Detail';
 
 import Form from './components/form/Form';
 
+import store from './components/reducer/store';
+import Favorites from './components/favorites/Favorites';
+
 function App () {
 
   const location = useLocation()
@@ -84,6 +87,7 @@ const logOut =()=>{
               />
 
               <Route path='/about' element={<About/>}/>
+              <Route path='/favorites' element={<Favorites/>}/>
 
               <Route path='/detail/:detailId' element={<Detail/>}/>
 

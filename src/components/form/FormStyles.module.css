@@ -75,15 +75,20 @@
     margin-bottom: 5px;
 }
 
-/*------------------------*/
-@media (max-width: 400px) {
-    .form .img, .divLabelForm .label{
+@media (max-width:800px) {
+    .img{
+        width: 75%;
+        background-size:contain;
+        background-position: center;
+    }
+};
+
+@media (max-width:800px) {
+    .form {
         width: 75%;
     }
+};
 
-    .img{
-        background-size:contain;
-    }
 
-}
+
 
