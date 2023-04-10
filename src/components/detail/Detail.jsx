@@ -13,8 +13,7 @@ export default function Detail (props){
         fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
         .then((response) => response.json())
         .then((data)=>{
-        //hay alho en la propiedad .name ? Si hay lo traemos, Si NO hay alert()
-            data.name ?  setCharacter(data) : alert("No existen Personas con el ID ingresado")
+                   data.name ?  setCharacter(data) : alert("No existen Personas con el ID ingresado")
 
         })
         .catch((err)=>{
@@ -22,7 +21,7 @@ export default function Detail (props){
             alert("Ups, algo salió mal")
         })
 
-        }, [detailId]);//cierra useEffect
+        }, [detailId]);
 
 return (
     <div>

@@ -3,8 +3,8 @@
 .container{
  /*FLEX FOX*/
  display: flex;
- justify-content: center; /*Contenido del BODY en el centro (eje horizontal)*/
- align-items: center; /*AHORA todo centrado HORIZONTAL y VERTICALMENTE (eje vertical)*/
+ justify-content: center; 
+ align-items: center; 
 }
 
 .form{

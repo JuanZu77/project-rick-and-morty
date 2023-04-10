@@ -13,8 +13,6 @@ const reducer = (state=initialState, {type, payload}) =>{
                 return{
                     ...state,   
                    myFavorites: [...state.myFavorites, payload] 
-                                //...state.favorites = copia de lo que tenemos, 
-                                //paylod = el nuevo personaje agregado a favoritos  
                 }
             case DELETE_FAVORITES:
                 

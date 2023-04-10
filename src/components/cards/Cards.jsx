@@ -1,10 +1,8 @@
-//REUTILIZAR CARD para cada CARTA GENERADA por PERSONAJE
+//REUTILIZAR CARD 
 
 import Card from '../card/Card';
 import styled from 'styled-components';
 
-
-//Cards es el Contenedor de todas las Card
 const Contenedor = styled.div`
      display: grid;
      gap: 10px;
@@ -20,9 +18,7 @@ export default function Cards(props) {
 
     const { characters } = props;
 
-   //key={char.id} el id funcionar como llave de cada elemento hijo
    return (
-
    <Contenedor>  
            {characters.map(({id, name, species, gender, image})=>(
 
@@ -39,22 +35,3 @@ export default function Cards(props) {
    </Contenedor>
    )
 }
-
-
-
-
-//Podriamos APLICAR DESTRUCTURING en el MAP
-
-
-//   {characters.map((char)=>(
-//    <Card
-
-//    key={char.id}
-//    name={char.name}
-//    species={char.species}
-//    gender={char.gender}
-//    image={char.image}
-
-//    onClose={() => props.onClose(char.id) /*window.alert('Emulamos que se cierra la card')*/}
-//    />
-// ))}

@@ -3,12 +3,9 @@
 import React from "react";
 import SearchBar from "../search/SearchBar";
 
-//import styled from "styled-components";
 import {NavLink, useNavigate} from "react-router-dom";
 import styles from "../nav/NavLinkStyle.module.css";
 
-
-//NavlinkMe para reutilizar el el mismo Nav Link 
     const NavLinkMe = ({to, children, props})=>{ 
         return (
                 <NavLink 

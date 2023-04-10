@@ -4,8 +4,6 @@ import Card from '../card/Card';
 import {Contenedor} from '../assets/styledComponentes';
 
 
-
- 
  function Favorites ({myFavorites}){
     return(
        <Contenedor>
@@ -21,7 +19,7 @@ import {Contenedor} from '../assets/styledComponentes';
     );
 }
 
-//Necesitamos escuchar la lista de favoritos
+
 const mapStateToProps = (state)=>{
     return{
      myFavorites: state.myFavorites

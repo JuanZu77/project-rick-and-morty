@@ -6,13 +6,12 @@ import {Routes, Route, useLocation, useNavigate} from "react-router-dom";
 import Cards from './components/cards/Cards.jsx'
 import Nav from './components/nav/Nav'
 
-//import characters from './data.js'
 import About from "./components/about/About";
 import Detail from './components/detail/Detail';
 
 import Form from './components/form/Form';
 
-import store from './components/reducer/store';
+//mport store from './components/reducer/store';
 import Favorites from './components/favorites/Favorites';
 
 function App () {
@@ -35,16 +34,12 @@ function App () {
         });
       };
 
-
-      //Pasar onClose() a Cards
       const onClose = (id) => {
-        //Recorremos todos los id y filtramos todos los diferentes al id
-        //El que sea === al id se elimina
             const filtrado = characters.filter((char)=>char.id !== Number(id))
             setCharacters(filtrado)
       };
 
-//Paso 5 --> Clase 10
+
  const navigate = useNavigate()
  const [access, setAccess] = useState(false)
 const userName = 'ejemplo@gmail.com';
@@ -60,12 +55,11 @@ const password = '1password';
 };
 
 
-useEffect(()=>{ //Si por algún motivo el usuario pierde acceso vuelve a "/"
+useEffect(()=>{ 
      !access && navigate("/")
-},[access, navigate]);//use effect en el Array solicita por defecto el navigate.
+},[access, navigate]);
 
 
-//logOut EXTRA
 const logOut =()=>{
    access && setAccess(false)
    navigate('/')

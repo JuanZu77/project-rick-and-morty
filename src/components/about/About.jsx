@@ -1,4 +1,4 @@
-//MI PERFIL
+//PERFIL
 
 import React from "react";
 import styled from "styled-components";

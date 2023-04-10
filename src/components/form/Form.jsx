@@ -6,40 +6,35 @@ import validate from "./validate";
 
 export default function Form (props){
 
-    //Paso 2 Estados
     const [userData, setUserData] = useState({
         userName:"",
         password:""
     })
 
-    //Paso 4 Errores
+
     const [errors, setErrors] = useState({
         userName:"",
         password:""
     })
 
-    //Paso 3 Cambios en los Inputs
     const handleChange = (event) =>{
       const {name, value} = event.target;
 
       setUserData({...userData, [name]:value
       });
    
-      //Paso 6 
       setErrors(validate({...userData,[name]:value
       })
       );
    };
 
-//Paso 5 Validaciones --> crear validaciones (importadas de validate.js)
 
-//Por Ultimo onSubmit (handleSubmit)para el ingreso
   const handleSubmit = (event) =>{
       event.preventDefault();
       props.login(userData)
   }
   
-//Paso 1 Crear Form 
+
     return(
     <div className={styles.container}>
 
@@ -51,7 +46,7 @@ export default function Form (props){
             <label className={styles.label} htmlfor="">Username</label>
             <input type="text" name="userName" value={userData.userName} onChange={handleChange} placeholder="ejemplo@gmail.com">
             </input>
-            {/*Si existe userName renderiza el errors para userName */}
+   
             {errors.userName ? <p className={styles.warning}>{errors.userName}</p> : null }
         </div>
 
@@ -59,7 +54,7 @@ export default function Form (props){
             <label className={styles.label} htmlfor="" >Password</label>
             <input type="password" name="password" value={userData.password} onChange={handleChange} placeholder="1password">
             </input>
-            {/*Si existe un error renderiza el errors para password */}
+
             {errors.password? <p className={styles.warning}>{errors.password}</p> : null }
         </div>
                 <button type="submit" className={styles.button}>Login</button>

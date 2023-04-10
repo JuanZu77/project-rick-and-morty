@@ -4,9 +4,8 @@
     margin-bottom: 20px;
 }
 
-/*Al Input aplciamos estilos direcatmente a la estiquea*/
 input {
-    outline: none; /*quita el borde al posicionarse en el input*/
+    outline: none; 
     background-color: #F5F5DE; /*pink: #f39cfb*//*E2E2CD*/
     color: rgb(5, 13, 250);
     border-radius: 5px 0 0 5px;
@@ -36,19 +35,3 @@ input:hover{
         width: 150px;
     }
 }
-/*
-.logOut{
-    background-color: #db54c0;
-    opacity: 0.5;
-    color: white;
-    cursor: pointer;
-    border: 1px solid gainsboro;
-    border-radius: 5px 5px 5px 5px;
-    justify-content: right;
-    align-items:flex-end;
-}
-
-.logOut:hover{
-    opacity: 1;
-}*/
-
