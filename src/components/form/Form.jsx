@@ -49,15 +49,15 @@ export default function Form (props){
 
          <div className={styles.divLabelForm}>
             <label className={styles.label} htmlfor="">Username</label>
-            <input type="text" name="userName" value={userData.userName} onChange={handleChange}>
+            <input type="text" name="userName" value={userData.userName} onChange={handleChange} placeholder="ejemplo@gmail.com">
             </input>
             {/*Si existe userName renderiza el errors para userName */}
             {errors.userName ? <p className={styles.warning}>{errors.userName}</p> : null }
         </div>
 
         <div className={styles.divLabelForm}>
-            <label className={styles.label} htmlfor="">Password</label>
-            <input type="password" name="password" value={userData.password} onChange={handleChange}>
+            <label className={styles.label} htmlfor="" >Password</label>
+            <input type="password" name="password" value={userData.password} onChange={handleChange} placeholder="1password">
             </input>
             {/*Si existe un error renderiza el errors para password */}
             {errors.password? <p className={styles.warning}>{errors.password}</p> : null }

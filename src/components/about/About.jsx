@@ -141,12 +141,13 @@ export default function About (props){
                 <Titulo>Bienvenidos a mi primer Web Page con React!</Titulo>
  
                   <Parrafo>
-                    Mi nombre es Juan, en el Mes de Enero del 2023 comencé 
-                    el Bootcamp para la carrera de Full Stack Web Developer en SoyHenry. 
+                    Mi nombre es Juan, en el mes de Enero del año 2023 comencé 
+                    el Bootcamp para la carrera de Full Stack Web Developer en <a target="_blank" href="https://www.soyhenry.com/"  className={styles
+                  .a}>SoyHenry</a>. 
                     <br/>
-                    Esta App fue desarrollada desde cero con las bases y conocimientos adquiridos en el Bootcamp. 
+                    Esta App fue desarrollada desde cero con las bases y conocimientos adquiridos en el Módulo II del Bootcamp con React y Redux. 
                     <br/>
-                    La lógica en su totalidad fue aplicada y en gran parte guiada por instructores del Bootcamp, 
+                    La estructura y la lógica que hemos adoptado fue guiada casi en su totalidad por instructores del Bootcamp, 
                     <br/>
                     quedando a elección personal el estilizado total de la App.          
                    </Parrafo>
@@ -154,7 +155,7 @@ export default function About (props){
 
                <ContainerImg>
                   <Tarjetas>
-                   <a href="https://github.com/JuanZu77">
+                   <a href="https://github.com/JuanZu77" target="_blank">
                    <Image className={styles.imgGit}></Image>
                    </a>
                    <Page><b>Mi GitHub</b></Page>
@@ -162,7 +163,7 @@ export default function About (props){
 
 
                    <Tarjetas>
-                    <a href="https://www.linkedin.com/in/juan-zubiri/">
+                    <a target="_blank" href="https://www.linkedin.com/in/juan-zubiri/">
                    <Image className={styles.imgLinkedIn} ></Image>
                    </a>
                    <Page> <b>Mi LinkedIn</b></Page>
