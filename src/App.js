@@ -46,9 +46,9 @@ const userName = 'ejemplo@gmail.com';
 const password = '1password';
 
  const login = (userData) => {
-  console.log(userData)
+  //console.log(userData)
     if (userData.userName === userName && userData.password === password) {
-      console.log("prueba")
+      //console.log("prueba")
       setAccess(true);
       navigate('/home')
   }

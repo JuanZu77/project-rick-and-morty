@@ -142,9 +142,11 @@ function Card({id,name, species, image, gender, onClose, deleteFavorites, addFav
          </ButtonContainer>
 
          <StyleLink to={`/detail/${id}`}>
+         {/*<Name>{id}</Name>*/}
          <ImageContainer>
             <Image src={image} alt="Not Found" />
             <Name>{name}</Name>
+            
          </ImageContainer>
 
         <PropsContenedor>

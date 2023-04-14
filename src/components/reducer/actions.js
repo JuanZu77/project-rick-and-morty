@@ -1,4 +1,4 @@
-import {ADD_FAVORITES, DELETE_FAVORITES} from '../reducer/actionsTypes';
+import {ADD_FAVORITES, DELETE_FAVORITES, FILTER, ORDER} from '../reducer/actionsTypes';
 
 export const addFavorites =(character)=>{
       return{
@@ -12,4 +12,18 @@ export const deleteFavorites =(id)=>{
         type: DELETE_FAVORITES,
         payload: id
     }
+};
+
+export function filterCards (gender){
+   return{
+    type: FILTER,
+    payload: gender
+   }
+};
+
+export function orderCards (orden){
+  return{
+   type: ORDER,
+   payload: orden
+  }
 };
