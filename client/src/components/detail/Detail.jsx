@@ -10,7 +10,7 @@ export default function Detail (props){
     const [character, setCharacter] = useState({})
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+        fetch(`https://localhost:3001/rickandmorty/character/${detailId}`)
         .then((response) => response.json())
         .then((data)=>{
                    data.name ?  setCharacter(data) : alert("No existen Personas con el ID ingresado")
