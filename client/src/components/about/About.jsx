@@ -142,7 +142,7 @@ export default function About (props){
  
                   <Parrafo>
                     Mi nombre es Juan, en el mes de Enero del año 2023 comencé 
-                    el Bootcamp para la carrera de Full Stack Web Developer en <a target="_blank" href="https://www.soyhenry.com/"  className={styles
+                    el Bootcamp para la carrera de Full Stack Web Developer en <a target="_blank" rel="noreferrer" href="https://www.soyhenry.com/"  className={styles
                   .a}>SoyHenry</a>. 
                     <br/>
                     Esta App fue desarrollada desde cero con las bases y conocimientos adquiridos en el Módulo II del Bootcamp con React y Redux. 
@@ -155,7 +155,7 @@ export default function About (props){
 
                <ContainerImg>
                   <Tarjetas>
-                   <a href="https://github.com/JuanZu77" target="_blank">
+                   <a href="https://github.com/JuanZu77" target="_blank" rel="noreferrer">
                    <Image className={styles.imgGit}></Image>
                    </a>
                    <Page><b>Mi GitHub</b></Page>
@@ -163,7 +163,7 @@ export default function About (props){
 
 
                    <Tarjetas>
-                    <a target="_blank" href="https://www.linkedin.com/in/juan-zubiri/">
+                    <a target="_blank" rel='noreferrer' href="https://www.linkedin.com/in/juan-zubiri/">
                    <Image className={styles.imgLinkedIn} ></Image>
                    </a>
                    <Page> <b>Mi LinkedIn</b></Page>
