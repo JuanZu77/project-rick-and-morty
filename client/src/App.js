@@ -58,15 +58,36 @@ function App () {
 //       navigate('/home')
 //   }
 // };
-function login(userData) {
-  const { userName, password } = userData;
-  const URL = 'http://localhost:3001/rickandmorty/login/';
-  axios(URL + `?email=${userName}&password=${password}`).then(({ data }) => {
-  const { access } = data;
-  setAccess(data);
-  access && navigate('/home');
-});
+
+
+////////////////////////////////////////////////////////////
+//ASYNC
+const login = async (userData)=>{
+  try{
+       const { userName, password } = userData;
+       const URL = 'http://localhost:3001/rickandmorty/login/';
+       const {data} = await axios(URL + `?email=${userName}&password=${  password}`);
+
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home')
+      }
+      catch(error){
+              alert(error.message)
+      }
 }
+
+////////////////////////////////////////////////////////////
+//EXPRESS
+// function login(userData) {
+//   const { userName, password } = userData;
+//   const URL = 'http://localhost:3001/rickandmorty/login/';
+//   axios(URL + `?email=${userName}&password=${password}`).then(({ data }) => {
+//   const { access } = data;
+//   setAccess(data);
+//   access && navigate('/home');
+// });
+// }
 
 
 useEffect(()=>{ 

@@ -44,7 +44,7 @@ export const deleteFavorites = (id) => {
 export function filterCards (gender){
    return{
     type: FILTER,
-    payload: gender
+    payload: gender,
    }
 };
 

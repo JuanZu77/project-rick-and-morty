@@ -2,7 +2,7 @@ import {ADD_FAVORITES, DELETE_FAVORITES, FILTER, ORDER} from '../reducer/actions
 
 const initialState = {
          myFavorites: [],
-         allCharacter:[]
+         allCharacters:[]
 };
 
 
@@ -20,37 +20,39 @@ const reducer = (state=initialState, {type, payload}) =>{
              case ADD_FAVORITES:
                 return { ...state, 
                     myFavorites: payload, 
-                    allCharacters: payload };
+                    allCharacters: payload 
+                };
 
-            // case DELETE_FAVORITES:
+         
+    // case DELETE_FAVORITES:
                 
             //       const filtered = state.myFavorites.filter((character)=> character.id !== payload)
             //     return {
             //         ...state, myFavorites: filtered, allCharacter: filtered
             //     }
 
-
             case DELETE_FAVORITES:
                 return { ...state, 
-                    myFavorites: payload
+                    myFavorites: payload,
+                    allCharacters: payload,
                 };
 
 
-             case FILTER:
-             let copy = [...state.myFavorites]
-             if (payload==='all'){
-                return {...state, myFavorites: copy}
-             }else{
-                const filterByGender = [...state.myFavorites].filter((char)=>char.gender === payload) 
-                return{
-                    ...state,
-                    myFavorites: filterByGender,
-                }
-            };
+                case FILTER:
+                    let copy = [...state.allCharacters]
+                    if (payload==='all'){
+                       return {...state, myFavorites: copy}
+                    }else{
+                       const filterByGender = [...state.allCharacters].filter((char)=>char.gender === payload) 
+                       return{
+                           ...state,
+                           myFavorites:  filterByGender,
+                       }
+                   };
 
                 
              case ORDER:
-                const filterByOrder = [...state.myFavorites].sort((a,b)=>{
+                const filterByOrder = [...state.allCharacters].sort((a,b)=>{
                     if(a.id > b.id){ 
                         return payload === 'Ascendente' ? 1 : -1
 

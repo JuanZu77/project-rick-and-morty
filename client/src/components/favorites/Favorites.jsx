@@ -58,7 +58,7 @@ const Select = styled.select`
       <option value='Male'>Male</option>
       <option value='Female'>Female</option> 
       <option value='Genderless'>Genderless</option> 
-      <option value='unknow'>Unknow</option> 
+      <option value='unknown'>Unknown</option> 
       
       </Select>
 
