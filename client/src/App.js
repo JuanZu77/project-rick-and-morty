@@ -14,6 +14,8 @@ import Form from './components/form/Form';
 //mport store from './components/reducer/store';
 import Favorites from './components/favorites/Favorites';
 
+import axios from 'axios'; 
+
 function App () {
 
   const location = useLocation()
@@ -44,17 +46,27 @@ function App () {
 
  const navigate = useNavigate()
  const [access, setAccess] = useState(false)
-const userName = 'ejemplo@gmail.com';
-const password = '1password';
 
- const login = (userData) => {
-  //console.log(userData)
-    if (userData.userName === userName && userData.password === password) {
-      //console.log("prueba")
-      setAccess(true);
-      navigate('/home')
-  }
-};
+// const userName = 'ejemplo@gmail.com';
+// const password = '1password';
+
+//  const login = (userData) => {
+//   //console.log(userData)
+//     if (userData.userName === userName && userData.password === password) {
+//       //console.log("prueba")
+//       setAccess(true);
+//       navigate('/home')
+//   }
+// };
+function login(userData) {
+  const { userName, password } = userData;
+  const URL = 'http://localhost:3001/rickandmorty/login/';
+  axios(URL + `?email=${userName}&password=${password}`).then(({ data }) => {
+  const { access } = data;
+  setAccess(data);
+  access && navigate('/home');
+});
+}
 
 
 useEffect(()=>{ 
