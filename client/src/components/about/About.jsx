@@ -152,9 +152,9 @@ export default function About (props){
                     <br/>
                     La estructura y la lógica que hemos adoptado fue guiada casi en su totalidad por instructores del Bootcamp, 
                     <br/>
-                    siempre con la posibilidad de utilizar otras alternativas para el desarrollo de la App y
+                    siempre con la posibilidad de utilizar otras alternativas para el desarrollo de la App 
                     <br/>
-                     quedando a elección personal el estilizado total de la App.          
+                     y quedando a elección personal el estilizado total de la App.          
                    </Parrafo>
 
 
