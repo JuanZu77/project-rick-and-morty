@@ -6,6 +6,7 @@ import styles from "../about/Images.module.css";
 
 const Container = styled.div`
        color: white; 
+       max-width;
 `;
 
 const ContainerImg = styled.div`
@@ -59,7 +60,7 @@ top: 520px;
 left: 80px;
 color: white;
 background-color: #0035e6;
-opacity: 0.5;
+opacity: 0.75;
 border-radius: 5px;
 
 @media(max-width: 800px){
@@ -145,11 +146,15 @@ export default function About (props){
                     el Bootcamp para la carrera de Full Stack Web Developer en <a target="_blank" rel="noreferrer" href="https://www.soyhenry.com/"  className={styles
                   .a}>SoyHenry</a>. 
                     <br/>
-                    Esta App fue desarrollada desde cero con las bases y conocimientos adquiridos en el Módulo II del Bootcamp con React y Redux. 
+                    Esta App fue desarrollada desde cero con las bases y conocimientos adquiridos en los cuatro módulos del Bootcamp utilizando 
+                    <br/>
+                    HTML, JavaScript, CSS, React, Redux, Node y SQL. 
                     <br/>
                     La estructura y la lógica que hemos adoptado fue guiada casi en su totalidad por instructores del Bootcamp, 
                     <br/>
-                    quedando a elección personal el estilizado total de la App.          
+                    siempre con la posibilidad de utilizar otras alternativas para el desarrollo de la App y
+                    <br/>
+                     quedando a elección personal el estilizado total de la App.          
                    </Parrafo>
 
 
@@ -158,7 +163,7 @@ export default function About (props){
                    <a href="https://github.com/JuanZu77" target="_blank" rel="noreferrer">
                    <Image className={styles.imgGit}></Image>
                    </a>
-                   <Page><b>Mi GitHub</b></Page>
+                   <Page><b>Mi GitHub ⬆️</b></Page>
                    </Tarjetas>
 
 
@@ -166,7 +171,7 @@ export default function About (props){
                     <a target="_blank" rel='noreferrer' href="https://www.linkedin.com/in/juan-zubiri/">
                    <Image className={styles.imgLinkedIn} ></Image>
                    </a>
-                   <Page> <b>Mi LinkedIn</b></Page>
+                   <Page> <b>Mi LinkedIn ⬆️</b></Page>
                    </Tarjetas>
                    
               </ContainerImg> 

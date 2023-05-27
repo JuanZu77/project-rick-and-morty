@@ -6,7 +6,8 @@ body {
   height: auto;
 
   background-image: url("../img/fondo_rick_and_moty.png");
-  background-size:cover;
+  image-rendering: optimizeQuality;
+
 
 
 
