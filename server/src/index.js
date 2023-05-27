@@ -24,11 +24,24 @@
 //     server.use(express.json());
 //     server.use('/rickandmorty', router)
 
+
 const PORT = 3001;
 const server = require('./app')
-server.listen(PORT, () => {
-console.log('Server raised in port: ' + PORT);
+
+const {conn} = require('./DB_connection');
+conn.sync({alter:true}).then(()=>{
+
+    server.listen(PORT, () => {
+        console.log('Server raised in port: ' + PORT);
+        });
+        
+})
+.catch((err)=>{
+       throw Error(err);
 });
+
+
+
 
 
 
